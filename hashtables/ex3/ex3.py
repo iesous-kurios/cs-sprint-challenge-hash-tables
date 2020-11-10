@@ -1,9 +1,23 @@
 def intersection(arrays):
     """
-    YOUR CODE HERE
-    """
-    # Your code here
+    Hi, my name is intersection.  I am 
+    a function to find the numbers that exist in 
+    every list of arrays you feed me
 
+    """
+
+    cache = {}
+    # unpack the list
+    for arr in arrays:
+        # unpack each array
+        for num in arr:
+            # append to cache
+            if num not in cache:
+                cache[num] = 1
+            else:
+                cache[num] += 1
+
+    result = [k for k, v in cache.items() if v == len(arrays)]
     return result
 
 
